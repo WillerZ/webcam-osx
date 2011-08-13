@@ -229,14 +229,6 @@ typedef struct GenericGrabContext
         CGContextRef        imageContext;
     } CocoaDecoding;
     
-    struct // Using QuickTime decoding
-    {
-        GWorldPtr               gworldPtr;
-        Rect                    boundsRect;
-        NSBitmapImageRep  *     imageRep;
-        ImageDescriptionHandle  imageDescription;
-    } QuicktimeDecoding;
-    
     struct // Using Image Compression Manager for decoding sequences
     {
         ImageSequence           sequenceIdentifier;
@@ -273,8 +265,6 @@ typedef struct GenericGrabContext
 - (void) cleanupDecoding;
 
 - (BOOL) decodeBufferCocoaJPEG: (GenericChunkBuffer *) buffer;
-- (BOOL) decodeBufferQuicktimeImage: (GenericChunkBuffer *) buffer;
-- (BOOL) decodeBufferQuicktimeSequence: (GenericChunkBuffer *) buffer;
 
 - (NSTextField *) getDebugMessageField;
 

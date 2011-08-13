@@ -1797,9 +1797,6 @@ void createJpegHeader(void * buffer, int width, int height, int quality, int sam
 {
     BOOL ok = [super setupDecoding];
     
-    (**QuicktimeDecoding.imageDescription).width = [self rawWidth];
-    (**QuicktimeDecoding.imageDescription).height = [self rawHeight];
-    
     return ok;
 }
 
